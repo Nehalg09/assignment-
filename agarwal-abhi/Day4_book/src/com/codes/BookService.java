@@ -52,7 +52,7 @@ public class BookService {
                 System.out.println("Name:"+bookDetails[i].getBookName());
                 System.out.println("\nAuthor Name:"+bookDetails[i].getAuthorName());
                 System.out.println("\nPrice:"+bookDetails[i].getPrice());
-                System.out.println("");
+                System.out.println("--");
                         
                 
         }
