@@ -19,6 +19,7 @@ public class BookService {
     public void add(Book b){
         
         bookDetails[count]= b;
+        count++;
     }
     
     public void getOne(int bookId)

@@ -34,10 +34,14 @@ public class Application {
                 case 1:
                         System.out.println("Enter ID:");
                         key= sc.nextInt();
+                        sc.nextLine();
+                        
                         System.out.println("\nEnter Name:");
                         String bookName= sc.nextLine();
+                        
                         System.out.println("\nEnter Author Name");
                         String authorName = sc.nextLine();
+                        
                         System.out.println("Enter price");
                         double price=sc.nextDouble();
                                 
@@ -48,9 +52,11 @@ public class Application {
                     System.out.println("Enter the book Id of the book");
                     key=sc.nextInt();
                     bs.getOne(key);
+                    break;
                     
                 case 3:    
                     bs.getAll();
+                    break;
                 
             }
                 
