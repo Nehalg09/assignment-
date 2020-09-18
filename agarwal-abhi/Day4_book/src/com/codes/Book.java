@@ -20,19 +20,14 @@ public class Book {
     private String authorName;
     private double price;
 
-    public Book(int bookId, String bookName, String authorName, double price) {
+    public Book(int bookId, String bookName, String authorName, double price) throws RangeCheckException{
         this.bookId = bookId;
         this.bookName = bookName;
         this.authorName = authorName;
         
-        try {
-            if(price<100 || price>500)
-                 throw new RangeCheckException("Book not in Range");
-        } catch (Exception e) {
-            System.out.println("Price is out of Range");
-            
-        }
-        this.price = price;
+        if(price<100 || price>500)
+            throw new RangeCheckException("The price of book should be between 100-500.");
+       this.price = price;
         
         
     }

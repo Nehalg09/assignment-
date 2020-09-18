@@ -46,18 +46,15 @@ public class BookService {
     
     public void getAll()
     {
-        for(Book bcheck : bookDetails)
-        {
-            
-                System.out.println("The details of the books are:\n");
-                
-                System.out.println("Name:"+bcheck.getBookName());
-                System.out.println("\nAuthor Name:"+bcheck.getAuthorName());
-                System.out.println("\nPrice:"+bcheck.getPrice());
+         System.out.println("The details of the books are:\n");
+        for(int i=0;i<bookDetails.length;i++)
+        {        
+                System.out.println("Name:"+bookDetails[i].getBookName());
+                System.out.println("\nAuthor Name:"+bookDetails[i].getAuthorName());
+                System.out.println("\nPrice:"+bookDetails[i].getPrice());
                 System.out.println("");
                         
                 
-            
         }
     }
     

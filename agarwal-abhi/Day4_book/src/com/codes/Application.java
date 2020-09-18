@@ -5,6 +5,7 @@
  */
 package com.codes;
 
+import com.exception.RangeCheckException;
 import java.util.Scanner;
 
 /**
@@ -45,8 +46,15 @@ public class Application {
                         System.out.println("Enter price");
                         double price=sc.nextDouble();
                                 
-                        b =new Book(key, bookName, authorName, price);
-                        bs.add(b);
+                        try{
+                            b =new Book(key, bookName, authorName, price);
+                            bs.add(b);
+                        }
+                        catch(RangeCheckException r)
+                        {
+                            System.err.println(r.getMessage());
+                        }
+                        
                         break;
                 case 2:
                     System.out.println("Enter the book Id of the book");
@@ -55,7 +63,8 @@ public class Application {
                     break;
                     
                 case 3:    
-                    bs.getAll();
+                    if(bs.bookDetails.length!= 0 )
+                        bs.getAll();
                     break;
                 
             }
