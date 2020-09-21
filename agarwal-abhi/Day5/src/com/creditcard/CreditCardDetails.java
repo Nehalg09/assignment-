@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Abhishek Agarwal
+ * @author Abhishek Agarwalmain
  */
 public class CreditCardDetails implements Serializable{
     
