@@ -5,6 +5,7 @@
  */
 package com.creditcard;
 
+import java.io.File;
 import java.util.Scanner;
 
 /**
@@ -103,6 +104,12 @@ public class Application {
                         
                         try{
                             System.out.println(bs.delObject(c));
+                            
+                            CreditCardDetails cd[]=bs.delObject(c);
+                            
+                            bs.writeObject(cd);
+                            
+                            
                         }
                         catch(NullPointerException e)
                         {

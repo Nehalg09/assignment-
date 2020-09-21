@@ -92,11 +92,11 @@ public class BusinessService {
     }
      
      
-     public CreditCardDetails delObject(int number) 
+     public CreditCardDetails[] delObject(int number) 
     {
-        CreditCardDetails cd = null;
-        CreditCardDetails cd1=null;
-        
+        CreditCardDetails cd[] = new CreditCardDetails[10];
+        CreditCardDetails cd1[]=null;
+        int i=0;
         ObjectInputStream inStream =null;
         
         try {
@@ -104,15 +104,22 @@ public class BusinessService {
            
              
                 
-                while(inStream.read()!=0)
-                {
-                    System.out.println("while mai aaya");
-                    cd= (CreditCardDetails) inStream.readObject();
-                    if(cd.getCardNumber()==number)
+                   System.out.println("while mai aaya");
+                    cd1= (CreditCardDetails[]) inStream.readObject();
+                    
+                   System.out.println("cd1 ka length"+cd1.length);
+                    
+                    for(CreditCardDetails c:cd1)
                     {
-                        cd.setCardNumber(0);
+                        System.out.println("for mai aaya");
+                        if(c.getCardNumber()!=number)
+                        {
+                            cd[i]=c;
+                            i++;
+                        }
                     }
-                }
+                    File file= new File("credit.doc");
+                            file.delete();
 
             //System.out.println(inStream);
                     
@@ -130,7 +137,8 @@ public class BusinessService {
                 e.printStackTrace();
             }
         }   
-        
+        System.out.println("length is"+cd.length);
+                
         return cd;
     }
 }
