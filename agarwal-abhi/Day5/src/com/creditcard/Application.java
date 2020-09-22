@@ -113,7 +113,7 @@ public class Application {
                         }
                         catch(NullPointerException e)
                         {
-                            System.err.println(e.getMessage()+"Please enter valid number");
+                            System.err.println(e.getMessage()+"Please enter");
                         }
                          
                         break;

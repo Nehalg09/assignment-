@@ -114,6 +114,8 @@ public class BusinessService {
                         System.out.println("for mai aaya");
                         if(c.getCardNumber()!=number)
                         {
+                            System.out.println("Entry"+c.getCardNumber());
+                                    
                             cd[i]=c;
                             i++;
                         }
