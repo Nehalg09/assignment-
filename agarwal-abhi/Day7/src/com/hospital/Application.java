@@ -62,11 +62,11 @@ public class Application {
         HospitalServicesImpl hosp =new HospitalServicesImpl();
         
         
-        System.out.println("------------Hospital Management System----------------");
-        System.out.println("");
+        
                 
         DoctorDetails doc = new DoctorDetails(123, "Abhishek", 88885555, "Paleantologist");
-       boolean result= hosp.addDoctor(doc);
+       
+        boolean result= hosp.addDoctor(doc);
         System.out.println(result);
         
         docList= hosp.getAllDoctorDetails();
@@ -74,6 +74,7 @@ public class Application {
         
         PatientDetails pat1 = new PatientDetails("Agarwal", 88888888, 22);
         PatientDetails pat2 = new PatientDetails("Raj", 88888888, 52);
+        
         result= hosp.addPatient(pat1);
         hosp.addPatient(pat2);
         System.out.println(result);
