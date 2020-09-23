@@ -87,7 +87,11 @@ public class HospitalServicesImpl implements HospitalServices{
     @Override
     public HashMap<DoctorDetails, List<PatientDetails>> del(DoctorDetails doc,PatientDetails pat) {
         
+        temp = new ArrayList<>();
         
+        temp = appointment.get(doc);
+        
+        temp.remove(pat);
         appointment.remove(doc, pat);
         
         return appointment;
