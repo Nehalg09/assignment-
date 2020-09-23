@@ -7,6 +7,7 @@ package com.collection;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -79,6 +80,37 @@ public class InvoiceDAOImpl implements InvoiceDAO{
         
         
         
+    }
+
+    @Override
+    public Collection<Invoice> sortedList() {
+        
+        Invoice inv = new Invoice();
+        Collections.sort(this.invList);
+        return this.invList;
+    }
+
+    @Override
+    public Collection<Invoice> sortedByInvoiceNumber() {
+        InvoiceNumberComparator inc = new InvoiceNumberComparator();
+        
+        Collections.sort(this.invList, inc);
+        
+        return this.invList;
+    }
+
+    @Override
+    public Collection<Invoice> sortedBy(String propName) {
+        InvoiceNumberComparator inc = new InvoiceNumberComparator();
+        CustomerNameComparator cc= new CustomerNameComparator();
+        
+        if(propName.equalsIgnoreCase("invoiceNumber"))
+            Collections.sort(this.invList, inc);
+        else
+            if(propName.equalsIgnoreCase("customeName"))
+                Collections.sort(this.invList, cc);
+        
+        return this.invList;
     }
 
 

@@ -28,9 +28,9 @@ public class Application {
         
     public static void main(String[] args) {
         Invoice ram= new Invoice(107, "Ramesh", 4500);
-        Invoice raj= new Invoice(102, "Rajesh", 4000);
-        Invoice rak= new Invoice(103, "Rakesh", 4600);
-        Invoice ral= new Invoice(104, "Ralesh", 4400);
+        Invoice raj= new Invoice(102, "Ajesh", 4000);
+        Invoice rak= new Invoice(103, "Bakesh", 4600);
+        Invoice ral= new Invoice(104, "Zalesh", 4400);
         
         
         InvoiceDAO dao= new InvoiceDAOImpl();
@@ -52,6 +52,15 @@ public class Application {
         Invoice newRal= new Invoice(104,"Ralesh", 4500);
         //dao.check(ral, newRal);
         
-        printList(invList);
+        //printList(invList);
+        
+        
+        System.out.println("Sorted List");
+        //printList(dao.sortedList());
+        printList(dao.sortedByInvoiceNumber());
+        
+        System.out.println("Decending Order");
+       
+        printList(dao.sortedBy("customerName"));
     }
 }

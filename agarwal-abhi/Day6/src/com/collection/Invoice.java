@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Abhishek Agarwal
  */
-public class Invoice implements Serializable{
+public class Invoice implements Serializable,Comparable<Invoice>{
     
     
     private static final long serialVersionUID= 1L;
@@ -90,6 +90,14 @@ public class Invoice implements Serializable{
     @Override
     public String toString() {
         return invoiceNumber+""+customerName+""+amount; //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int compareTo(Invoice o) {
+        
+        if(this.invoiceNumber < o.invoiceNumber) return -1;
+        if(this.invoiceNumber > o.invoiceNumber) return 1;
+        return 0;
     }
     
     
