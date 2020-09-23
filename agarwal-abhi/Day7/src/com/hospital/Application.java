@@ -36,6 +36,18 @@ public class Application {
         }
     }
     
+    public static void printAppointment(Set<Map.Entry<DoctorDetails,List<PatientDetails>>> setList)
+            
+    {
+        for(Map.Entry<DoctorDetails,List<PatientDetails>> eachEntry : setList)
+        {
+            System.out.print(eachEntry.getKey());
+            System.out.print("\t"+eachEntry.getValue()+"\n");
+                    
+                    
+        }
+        
+    }
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -77,26 +89,27 @@ public class Application {
         
         
         Set<Map.Entry<DoctorDetails,List<PatientDetails>>> mylist= ht.entrySet();
-        
-        for(Map.Entry<DoctorDetails,List<PatientDetails>> eachEntry : mylist)
-        {
-            System.out.print(eachEntry.getKey());
-            System.out.print("\t"+eachEntry.getValue()+"\n");
-                    
-                    
-        }
+        printAppointment(mylist);
+//        for(Map.Entry<DoctorDetails,List<PatientDetails>> eachEntry : mylist)
+//        {
+//            System.out.print(eachEntry.getKey());
+//            System.out.print("\t"+eachEntry.getValue()+"\n");
+//                    
+//                    
+//        }
         
         System.out.println("After Delete\n\n");
                 
         ht= hosp.del(doc, pat2);
         mylist= ht.entrySet();
-        for(Map.Entry<DoctorDetails,List<PatientDetails>> eachEntry : mylist)
-        {
-            System.out.print(eachEntry.getKey());
-            System.out.print("\t"+eachEntry.getValue()+"\n");
-                    
-                    
-        }
+        printAppointment(mylist);
+//        for(Map.Entry<DoctorDetails,List<PatientDetails>> eachEntry : mylist)
+//        {
+//            System.out.print(eachEntry.getKey());
+//            System.out.print("\t"+eachEntry.getValue()+"\n");
+//                    
+//                    
+//        }
         
         
     }
