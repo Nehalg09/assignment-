@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Abhishek Agarwal
  */
-public interface HospitalServices {
+public interface HospitalDAO {
     
     
     boolean addDoctor(DoctorDetails doctorDetails);

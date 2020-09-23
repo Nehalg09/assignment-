@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hospital.ifaces;
+package com.hospital.application;
 
 import com.hospital.application.*;
 import java.util.ArrayList;
@@ -13,12 +13,13 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import com.hospital.ifaces.HospitalDAO;
 
 /**
  *
  * @author Abhishek Agarwal
  */
-public class HospitalServicesImpl implements HospitalServices{
+public class HospitalDAOImpl implements HospitalDAO{
     
     
     
@@ -27,7 +28,7 @@ public class HospitalServicesImpl implements HospitalServices{
     private List<PatientDetails> temp;
     private HashMap<DoctorDetails,List<PatientDetails>> appointment;
 
-    public HospitalServicesImpl() {
+    public HospitalDAOImpl() {
         
         docList= new ArrayList<>();
         patList= new ArrayList<>();

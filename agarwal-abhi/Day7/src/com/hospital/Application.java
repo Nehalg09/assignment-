@@ -7,7 +7,7 @@ package com.hospital;
 
 import com.hospital.application.DoctorDetails;
 import com.hospital.application.PatientDetails;
-import com.hospital.ifaces.HospitalServicesImpl;
+import com.hospital.application.HospitalDAOImpl;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -59,7 +59,7 @@ public class Application {
         Collection<DoctorDetails> docList= null;
         Collection<PatientDetails> patList= null;
         
-        HospitalServicesImpl hosp =new HospitalServicesImpl();
+        HospitalDAOImpl hosp =new HospitalDAOImpl();
         
         
         
